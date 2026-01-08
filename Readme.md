@@ -40,9 +40,12 @@ This avoids overstating revenue and improves decision-making accuracy.
 ---
 
 ## ✅ Recommendations
-1. **Increase Easy Ship adoption** for Merchant orders to improve revenue realization  
-2. **Actively monitor At-Risk orders** to prevent cancellations and returns  
-3. **Redefine revenue KPIs** using Realized, At Risk, and Lost buckets instead of total revenue  
+## ✅ Recommendations
+
+- Increase adoption of **Easy Ship** for Merchant orders, as it shows the highest revenue realization.
+- Actively monitor **At Risk** orders (~74%) to prevent conversion into cancellations or returns.
+- Apply **value-based risk handling**, as ~88% of at-risk orders are low-value and can be managed through automation.
+
 
 ---
 
