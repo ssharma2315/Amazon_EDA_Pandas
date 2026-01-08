@@ -38,8 +38,6 @@ This avoids overstating revenue and improves decision-making accuracy.
 - Easy Ship represents ~22% of orders but has the highest delivery success rate
 
 ---
-
-## ✅ Recommendations
 ## ✅ Recommendations
 
 - Increase adoption of **Easy Ship** for Merchant orders, as it shows the highest revenue realization.
