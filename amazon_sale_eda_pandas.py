@@ -127,3 +127,35 @@ pd.crosstab(merchant_df["fulfilled_by"], merchant_df["Revenue_bucket"])
 
 # Checking overall fulfilment method distribution
 df1["fulfilled_by"].value_counts()
+
+# Checking the overall distribution of revenue buckets
+# This helps understand how many orders are realized, at risk, or lost
+df1["Revenue_bucket"].value_counts(normalize=True) * 100
+
+
+# Filtering only the 'At Risk' orders
+# These are shipped but not yet delivered and represent potential revenue
+At_risk_df1 = df1[df1["Revenue_bucket"] == "At Risk"]
+
+
+# Inspecting the Amount column for at-risk orders
+# This gives an idea of order value spread before bucketing
+At_risk_df1["Amount"]
+
+
+# Creating value-based buckets for at-risk orders
+# The goal is to understand whether risk is coming from low-value or high-value orders
+At_risk_df1["Value_buckets"] = pd.cut(
+    At_risk_df1["Amount"],
+    bins=[0, 500, 1000, 2000, 2500, np.inf],
+    labels=["Very Low", "Low", "Medium", "High", "Very high"]
+)
+
+
+# Previewing the dataframe after adding value buckets
+At_risk_df1
+
+
+# Checking the percentage distribution of at-risk orders across value buckets
+# This helps prioritize which orders need manual attention vs automation
+At_risk_df1["Value_buckets"].value_counts(normalize=True) * 100
