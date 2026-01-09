@@ -39,12 +39,18 @@ This avoids overstating revenue and improves decision-making accuracy.
 
 ---
 
-## ✅ Recommendations
+
 ## ✅ Recommendations
 
-- Increase adoption of **Easy Ship** for Merchant orders, as it shows the highest revenue realization.
-- Actively monitor **At Risk** orders (~74%) to prevent conversion into cancellations or returns.
-- Apply **value-based risk handling**, as ~88% of at-risk orders are low-value and can be managed through automation.
+- Focus on At-Risk orders: ~74% of orders are shipped but not delivered, making conversion improvement the highest revenue lever.
+
+- Use value-based prioritization: ~88% of at-risk orders are low value and can be handled via automation, while medium/high-value orders need manual attention.
+
+- Prioritize B2C over B2B risk: All B2B at-risk orders are very low value; revenue risk is driven mainly by B2C orders.
+
+- Target the “Set” category: Medium and high-value at-risk orders are concentrated in this category, enabling focused intervention.
+
+- Segment revenue reporting: Separate Realized, At-Risk, and Lost revenue to avoid overstating performance.
 
 
 ---

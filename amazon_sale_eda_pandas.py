@@ -159,3 +159,82 @@ At_risk_df1
 # Checking the percentage distribution of at-risk orders across value buckets
 # This helps prioritize which orders need manual attention vs automation
 At_risk_df1["Value_buckets"].value_counts(normalize=True) * 100
+
+# Understanding the overall revenue distribution across different order outcomes
+# This gives a high-level view of realized vs at-risk vs lost revenue
+df1["Revenue_bucket"].value_counts(normalize=True) * 100
+
+
+# Creating a separate dataframe for at-risk orders
+# These are shipped orders that still have the potential to convert into revenue
+At_risk_df1 = df1[df1["Revenue_bucket"] == "At Risk"]
+
+
+# Reviewing order amounts for at-risk orders
+# Helps understand the value spread before segmentation
+At_risk_df1["Amount"]
+
+
+# Segmenting at-risk orders into value buckets
+# This allows prioritization based on potential revenue impact
+At_risk_df1["Value_buckets"] = pd.cut(
+    At_risk_df1["Amount"],
+    bins=[0, 500, 1000, 2000, 2500, np.inf],
+    labels=["Very Low", "Low", "Medium", "High", "Very high"]
+)
+
+
+# Quick check to ensure value buckets are assigned correctly
+At_risk_df1
+
+
+# Checking how at-risk orders are distributed across value buckets (in percentage terms)
+# This highlights whether risk is volume-driven or value-driven
+At_risk_df1["Value_buckets"].value_counts(normalize=True) * 100
+
+
+# Rechecking the full dataset (sanity check before deeper segmentation)
+df1
+
+
+# Comparing B2B vs B2C behavior within at-risk orders
+# Helps understand whether revenue risk is coming from business or consumer orders
+pd.crosstab(
+    At_risk_df1["B2B"],
+    At_risk_df1["Value_buckets"],
+    normalize="index"
+) * 100
+
+
+# Focusing only on B2C at-risk orders for further analysis
+# B2C typically contributes higher order volume and revenue variability
+b2c_at_risk = At_risk_df1[At_risk_df1["B2B"] == False]
+
+
+# Previewing B2C at-risk data before category-level analysis
+b2c_at_risk
+
+
+# Category-wise value distribution for B2C at-risk orders
+# Helps identify which product categories contribute to meaningful revenue risk
+pd.crosstab(
+    b2c_at_risk["Category"],
+    b2c_at_risk["Value_buckets"],
+    normalize=True
+) * 100
+
+
+# Creating a focused dataset of high-priority at-risk orders
+# These are B2C orders in the 'Set' category with medium to high order value
+priority_risk_df = At_risk_df1[
+    (At_risk_df1["B2B"] == False) &
+    (At_risk_df1["Category"] == "Set") &
+    (At_risk_df1["Value_buckets"].isin(["Medium", "High"]))
+]
+
+
+# Viewing key details of priority orders
+# This table represents actionable items for operations or fulfilment teams
+priority_risk_df[["Order ID", "Category", "Amount", "Fulfilment", "fulfilled_by"]].head()
+
+
