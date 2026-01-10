@@ -19,12 +19,15 @@ This project aims to:
 🧠 Methodology (High-Level)
 
 - Revenue Funnel Creation
+
   Orders were categorized into Realized, At Risk, and Lost based on order lifecycle status.
 
--Value-Based Segmentation
- At-risk orders were bucketed by order value to differentiate volume risk from revenue risk.
+- Value-Based Segmentation
+
+  At-risk orders were bucketed by order value to differentiate volume risk from revenue risk.
 
 - Multi-Dimensional Analysis
+
   At-risk revenue was further analyzed across:
 
 - B2B vs B2C
@@ -33,7 +36,8 @@ This project aims to:
 
 - Fulfilment type
 
-- Priority Risk Identification
+- Priority Risk Identification 
+
   Analysis was narrowed to a small subset of medium/high-value orders representing realistic recovery opportunities.
 
 📊 Key Metrics & Findings
