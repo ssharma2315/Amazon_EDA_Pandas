@@ -1,65 +1,89 @@
-# Amazon Sales Analysis – Revenue & Fulfilment Insights
+📊 Amazon Sales Revenue Risk Analysis (Pandas)
+🔍 Project Overview
 
-## 📌 Overview
-This project analyzes Amazon sales data to understand how revenue is realized, where it is at risk, and how fulfilment methods impact successful order delivery.  
-The focus is on **business-oriented revenue classification** rather than raw aggregation.
+This project analyzes Amazon sales order data to understand how much revenue is truly realized, at risk, or lost, and where operational focus can recover maximum value.
+The analysis is performed using Python (Pandas, NumPy) with a strong emphasis on decision-oriented analytics rather than surface-level EDA.
 
----
+🎯 Business Objective
 
-## 🎯 Objectives
-- Clean and prepare raw sales data
-- Classify revenue into meaningful business buckets
-- Identify fulfilment-related risks
-- Provide actionable recommendations
+Most sales reports treat shipped orders as revenue, which can overstate business performance.
+This project aims to:
 
----
+- Redefine revenue into meaningful stages
 
-## 🛠️ Tools Used
-- Python (Pandas, NumPy)
-- Google Colab
-- Git & GitHub
+- Identify where revenue risk actually lies
 
----
+- Narrow large datasets into small, actionable decision sets
 
-## 💰 Revenue Segmentation
-Revenue was classified into three buckets based on order status:
+🧠 Methodology (High-Level)
 
-- **Realized** → Delivered orders  
-- **At Risk** → Shipped but not delivered  
-- **Lost** → Cancelled / Returned / Rejected orders  
+- Revenue Funnel Creation
+Orders were categorized into Realized, At Risk, and Lost based on order lifecycle status.
 
-This avoids overstating revenue and improves decision-making accuracy.
+-Value-Based Segmentation
+At-risk orders were bucketed by order value to differentiate volume risk from revenue risk.
 
----
+- Multi-Dimensional Analysis
+At-risk revenue was further analyzed across:
 
-## 📊 Key Insights
-- Majority of orders fall under **At Risk** revenue
-- **Easy Ship (Merchant fulfilment)** accounts for **100% of realized revenue**
-- Easy Ship represents ~22% of orders but has the highest delivery success rate
+- B2B vs B2C
 
----
+- Product categories
 
+- Fulfilment type
 
-## ✅ Recommendations
+- Priority Risk Identification
+Analysis was narrowed to a small subset of medium/high-value orders representing realistic recovery opportunities.
 
-- Focus on At-Risk orders: ~74% of orders are shipped but not delivered, making conversion improvement the highest revenue lever.
+📊 Key Metrics & Findings
 
-- Use value-based prioritization: ~88% of at-risk orders are low value and can be handled via automation, while medium/high-value orders need manual attention.
+- Revenue Funnel
 
-- Prioritize B2C over B2B risk: All B2B at-risk orders are very low value; revenue risk is driven mainly by B2C orders.
+At Risk: ~74%
 
-- Target the “Set” category: Medium and high-value at-risk orders are concentrated in this category, enabling focused intervention.
+Realized: ~18%
 
-- Segment revenue reporting: Separate Realized, At-Risk, and Lost revenue to avoid overstating performance.
+Lost: ~8%
 
+- Risk Distribution
 
----
+~88% of at-risk orders are low or very low value
 
-## 📌 Conclusion
-This analysis demonstrates how aligning data analysis with business logic leads to more reliable insights and better operational decisions.
+Medium/high-value risk is highly concentrated
 
----
+- Recoverable Revenue
 
-## 👤 Author
-**Saransh Sharma**  
+~22% of total at-risk revenue is realistically recoverable
 
+This recovery opportunity exists within a small, targeted order segment
+
+- Operational Insight
+
+100% of high-priority at-risk revenue is linked to Amazon-fulfilled orders
+
+Indicates fulfilment-level, not merchant-level, intervention
+
+✅ Key Business Recommendations
+
+- Focus on At-Risk orders rather than only cancellations.
+
+- Apply value-based prioritization to optimize operational effort.
+
+- Prioritize B2C orders, as B2B risk is low value.
+
+- Target the “Set” category, which drives all meaningful at-risk revenue.
+
+- Investigate Amazon fulfilment workflows to improve delivery conversion.
+
+⚠️ Challenges & Limitations
+
+- Single-date data limited time-series analysis
+
+- Missing values required careful handling to avoid revenue distortion
+
+- Maintaining analytical focus while avoiding over-segmentation
+
+🏁 Conclusion
+
+This project demonstrates how Pandas can be used for real business analysis, not just data exploration.
+By combining funnel analysis, segmentation, and KPI engineering, the project translates raw sales data into clear, actionable insights suitable for operational and leadership decision-making.
