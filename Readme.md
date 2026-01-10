@@ -1,4 +1,5 @@
 📊 Amazon Sales Revenue Risk Analysis (Pandas)
+
 🔍 Project Overview
 
 This project analyzes Amazon sales order data to understand how much revenue is truly realized, at risk, or lost, and where operational focus can recover maximum value.
@@ -18,13 +19,13 @@ This project aims to:
 🧠 Methodology (High-Level)
 
 - Revenue Funnel Creation
-Orders were categorized into Realized, At Risk, and Lost based on order lifecycle status.
+  Orders were categorized into Realized, At Risk, and Lost based on order lifecycle status.
 
 -Value-Based Segmentation
-At-risk orders were bucketed by order value to differentiate volume risk from revenue risk.
+ At-risk orders were bucketed by order value to differentiate volume risk from revenue risk.
 
 - Multi-Dimensional Analysis
-At-risk revenue was further analyzed across:
+  At-risk revenue was further analyzed across:
 
 - B2B vs B2C
 
@@ -33,35 +34,35 @@ At-risk revenue was further analyzed across:
 - Fulfilment type
 
 - Priority Risk Identification
-Analysis was narrowed to a small subset of medium/high-value orders representing realistic recovery opportunities.
+  Analysis was narrowed to a small subset of medium/high-value orders representing realistic recovery opportunities.
 
 📊 Key Metrics & Findings
 
 - Revenue Funnel
 
-At Risk: ~74%
+  At Risk: ~74%
 
-Realized: ~18%
+  Realized: ~18%
 
-Lost: ~8%
+  Lost: ~8%
 
 - Risk Distribution
 
-~88% of at-risk orders are low or very low value
+  ~88% of at-risk orders are low or very low value
 
-Medium/high-value risk is highly concentrated
+  Medium/high-value risk is highly concentrated
 
 - Recoverable Revenue
 
-~22% of total at-risk revenue is realistically recoverable
+  ~22% of total at-risk revenue is realistically recoverable
 
-This recovery opportunity exists within a small, targeted order segment
+  This recovery opportunity exists within a small, targeted order segment
 
 - Operational Insight
 
-100% of high-priority at-risk revenue is linked to Amazon-fulfilled orders
+  100% of high-priority at-risk revenue is linked to Amazon-fulfilled orders
 
-Indicates fulfilment-level, not merchant-level, intervention
+  Indicates fulfilment-level, not merchant-level, intervention
 
 ✅ Key Business Recommendations
 
