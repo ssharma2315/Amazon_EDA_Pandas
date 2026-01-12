@@ -3,7 +3,7 @@
 🔍 Project Overview
 
 This project analyzes Amazon sales order data to understand how much revenue is truly realized, at risk, or lost, and where operational focus can recover maximum value.
-The analysis is performed using Python (Pandas, NumPy) with a strong emphasis on decision-oriented analytics rather than surface-level EDA.
+The analysis is performed using Python (Pandas, NumPy , Matplotlib) with a strong emphasis on decision-oriented analytics rather than surface-level EDA.
 
 🎯 Business Objective
 
@@ -61,6 +61,11 @@ This project aims to:
   ~22% of total at-risk revenue is realistically recoverable
 
   This recovery opportunity exists within a small, targeted order segment
+
+📈 Visualization Support
+
+  Key insights were reinforced using focused visualizations such as revenue funnel comparison, distribution of at-risk order values, and category-wise risk contribution. These charts are intentionally minimal and decision-oriented, helping validate analytical findings and highlight where revenue risk is concentrated.
+
 
 - Operational Insight
 

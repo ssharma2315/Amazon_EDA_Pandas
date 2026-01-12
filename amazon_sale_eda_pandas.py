@@ -240,3 +240,60 @@ round(
 # Checking which fulfilment channel is responsible for recoverable risk
 # This helps identify the operational owner for intervention
 priority_risk_df["Fulfilment"].value_counts(normalize=True) * 100
+
+
+
+# VISUALIZATION
+
+# importing matplotlib for visualizations
+import matplotlib.pyplot as plt
+
+# Setting figure size for better readability
+# Choosing subplot
+
+
+plt.figure(figsize=(20, 8))
+plt.subplot(2,2,1)
+# Aggregating total revenue for each revenue bucket
+# This helps understand where revenue is currently sitting in the funnel
+Revenue_segmentation = df1.groupby("Revenue_bucket")["Amount"].sum()
+Revenue_segmentation
+
+# Bar chart is used to compare revenue across different buckets
+Revenue_segmentation.plot(kind='bar', color='g')
+
+# Adding chart labels for clarity
+plt.title("Revenue by Revenue Segmentation")
+plt.xlabel("Revenue Bucket")
+plt.ylabel("Total Revenue")
+
+# Choosing subplot
+plt.subplot(2,2,2)
+
+# Histogram to understand how at-risk revenue is distributed
+# This helps differentiate low-value vs high-value risk
+plt.hist(At_risk_df1["Amount"], bins=20, color='r')
+
+# Adding labels to explain the distribution clearly
+plt.title("Revenue Distribution of At-Risk Orders")
+plt.xlabel("Order Amount")
+plt.ylabel("Frequency")
+
+
+# Calculating total at-risk revenue for each category
+# This helps identify which categories drive the most revenue risk
+category_risk = At_risk_df1.groupby("Category")["Amount"].sum()
+category_risk
+
+# Choosing subplot
+plt.subplot(2,2,3)
+
+# Bar chart to compare at-risk revenue across categories
+category_risk.plot(kind='bar', color='purple')
+
+# Adding descriptive labels
+plt.title("At-Risk Revenue by Category")
+plt.xlabel("Category")
+plt.ylabel("At-Risk Revenue")
+
+plt.show()
